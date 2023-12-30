@@ -1,4 +1,5 @@
 import jwtDecode from 'jwt-decode';
+
 const getUserInfo = () => {
   const token = localStorage.getItem('token');
   try {

@@ -10,15 +10,13 @@ const SignupPage = () => {
   const info = getUserInfo();
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
+    if (info) {
       navigate('/');
     }
   }, [isAuthenticated]);
   return (
     <div className="w-screen font-sans text-gray-900">
-      <div className=" mt-4" >
-       
-      </div>
+      <div className=" mt-4"></div>
       <Signup />
     </div>
   );

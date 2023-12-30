@@ -20,6 +20,7 @@ import statisticsSlice from './reducers/statisticsSlice';
 import verifySlice from './reducers/verifyEmailSlice';
 import paymentCheckoutSlice from './reducers/PaymentsSlice';
 import allPaymentSlice from './reducers/allPaymentSlice';
+import updatePasswordSlice from './reducers/updatePasswordSlice';
 
 const middlewares = [];
 if (process.env.NODE_ENV === 'development') {
@@ -54,6 +55,7 @@ const store = configureStore({
     verify: verifySlice,
     payment: paymentCheckoutSlice,
     getAllPayments: allPaymentSlice,
+    updatePassword: updatePasswordSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

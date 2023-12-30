@@ -1,56 +1,44 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { showErrorMessage, showSuccessMessage } from '../../utils/toast';
-import { loginSchema } from '../../validations/inputValidation';
-import { login } from '../../redux/reducers/loginSlice';
+import { updatePasswordSchema } from '../../validations/inputValidation';
+import { updatePassword } from '../../redux/reducers/updatePasswordSlice';
 import Button from '../Button';
-import { Link, useNavigate } from 'react-router-dom';
 
-const Login = () => {
+const ChangePassword = () => {
   const navigate = useNavigate();
-  const { isLoading } = useSelector((state) => state.login);
+  const { isLoading } = useSelector((state) => state.updatePassword);
   const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ resolver: yupResolver(loginSchema) });
-
+    reset,
+  } = useForm({ resolver: yupResolver(updatePasswordSchema) });
   const onSubmit = async (userData) => {
     try {
-      const response = await dispatch(login(userData)).unwrap();
-      if (response?.status === 401) {
-        showErrorMessage(response?.message);
-      }
-      showSuccessMessage(response?.message);
-      navigate('/dashboard');
+      const response = await dispatch(updatePassword(userData)).unwrap();
+      navigate('/profile');
+      showSuccessMessage(response.message);
+      reset();
     } catch (error) {
-      if (error.status === 403) {
-        showErrorMessage(error?.data?.message);
-      }
+      showErrorMessage(error.data.message);
+      console.log(error);
     }
   };
 
   return (
     <>
-      <main className="w-full max-w-md mx-auto p-6 -mt-20">
+      <main className="w-full max-w-md mx-auto p-6 -mt-[650px]">
         <div className="mt-7 bg-white border border-gray-200 rounded-xl shadow-sm dark:bg-gray-800 dark:border-gray-700">
           <div className="p-4 sm:p-7">
             <div className="text-center">
               <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
-                Log In
+                Update Password
               </h1>
-              <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                Do not have an account?
-                <Link
-                  className="text-deep-purple-accent-700 decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 block"
-                  to="/auth/signup"
-                >
-                  Sign Up here
-                </Link>
-              </p>
             </div>
             <div className="mt-5">
               {/* Form */}
@@ -61,21 +49,46 @@ const Login = () => {
               >
                 <div className="grid gap-y-4">
                   {/* Form Group */}
-
+                  <div>
+                    <label
+                      htmlFor="text"
+                      className="block text-sm mb-2 dark:text-white"
+                    >
+                      Current Password
+                    </label>
+                    <div className="relative">
+                      <input
+                        id="name"
+                        type="password"
+                        placeholder="Enter your current password"
+                        required
+                        {...register('currentPassword')}
+                        className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                      />
+                      <div
+                        className=" text-xs text-red-600 mt-2"
+                        id="confirm-name-error"
+                      >
+                        {errors.currentPassword && (
+                          <p>{errors.currentPassword.message}</p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
                   <div>
                     <label
                       htmlFor="email"
                       className="block text-sm mb-2 dark:text-white"
                     >
-                      Email address
+                      New Password
                     </label>
                     <div className="relative">
                       <input
-                        id="email"
-                        type="email"
-                        placeholder="email"
+                        id="password"
+                        type="password"
+                        placeholder="Enter your new password"
                         required
-                        {...register('email')}
+                        {...register('newPassword')}
                         className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                       />
                     </div>
@@ -83,75 +96,47 @@ const Login = () => {
                       className="hidden text-xs text-red-600 mt-2"
                       id="email-error"
                     >
-                      {errors.email && <p>{errors.email.message}</p>}
+                      {errors.newPassword && (
+                        <p>{errors.newPassword.message}</p>
+                      )}
                     </p>
                   </div>
-                  {/* End Form Group */}
-                  {/* Form Group */}
                   <div>
                     <label
-                      htmlFor="password"
+                      htmlFor="email"
                       className="block text-sm mb-2 dark:text-white"
                     >
-                      Password
+                      Confirm Password
                     </label>
                     <div className="relative">
                       <input
                         id="password"
                         type="password"
-                        placeholder="******************"
+                        placeholder="Enter your new password"
                         required
-                        {...register('password')}
+                        {...register('confirmPassword')}
                         className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                       />
                     </div>
                     <p
                       className="hidden text-xs text-red-600 mt-2"
-                      id="password-error"
+                      id="email-error"
                     >
-                      {errors.password && <p>{errors.password.message}</p>}
+                      {errors.confirmPassword && (
+                        <p>{errors.confirmPassword.message}</p>
+                      )}
                     </p>
                   </div>
-
                   {/* End Form Group */}
-                  {/* Checkbox */}
-                  <div className="mb-6">
-                    <label className="mb-2 flex text-sm">
-                      <input
-                        type="checkbox"
-                        name="accept"
-                        className="mr-2"
-                        required
-                      />
-                      <div className="text-gray-800">
-                        <p className="">
-                          I accept the
-                          <Link
-                            href="#"
-                            className="cursor-pointer text-blue-500 underline"
-                          >
-                            terms of use
-                          </Link>
-                          and
-                          <Link
-                            href="#"
-                            className="cursor-pointer text-blue-500 underline"
-                          >
-                            privacy policy
-                          </Link>
-                        </p>
-                      </div>
-                    </label>
-                  </div>
-                  {/* End Checkbox */}
-                  <div className="flex items-center">
+
+                  <div className="flex items-center mt-10">
                     <div className="flex-1"></div>
                     {isLoading ? (
                       <>
                         <button
                           type="submit"
                           disabled={true}
-                          className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-deep-purple-accent-700 text-white hover:bg-deep-purple-accent-500 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                          className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-deep-purple-accent-700 text-white hover:bg-deep-purple-accent-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                         >
                           <svg
                             role="status"
@@ -174,13 +159,12 @@ const Login = () => {
                     ) : (
                       <button
                         type="submit"
-                        className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-deep-purple-accent-700 text-white hover:bg-deep-purple-accent-500 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
+                        className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-deep-purple-accent-700 text-white hover:bg-deep-purple-accent-600 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                       >
-                        Login
+                        Change password
                       </button>
                     )}
                   </div>
-                  <div></div>
                 </div>
               </form>
               {/* End Form */}
@@ -192,4 +176,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default ChangePassword;

@@ -13,6 +13,7 @@
     "@hookform/resolvers": "^3.1.0",
     "@reduxjs/toolkit": "^2.0.1",
     "axios": "^1.6.2",
+    "dayjs": "^1.11.10",
     "flowbite-react": "^0.7.2",
     "jwt-decode": "^3.1.2",
     "preline": "^2.0.2",

@@ -28,3 +28,15 @@ export const searchSchema = yup.object().shape({
   position: yup.string().required('position is required'),
   city: yup.string().required('city is required'),
 });
+
+export const updatePasswordSchema = yup.object().shape({
+  currentPassword: yup.string().required('fill the field!'),
+  newPassword: yup
+    .string()
+    .min(8, 'Password must be at least 8 characters long')
+    .required('fill the field!'),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref('newPassword'), null], "Passwords don't match.")
+    .required('fill the field!'),
+});

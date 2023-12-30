@@ -8,9 +8,10 @@ import TuteCard from './TuteCard/TuteCard';
 const Home = () => {
   const isAuthenticated = useSelector((state) => state.login.isAuthenticated);
   const navigate = useNavigate();
+  const info = getUserInfo();
 
   useEffect(() => {
-    if (!localStorage.getItem('token')) {
+    if (!info) {
       navigate('/auth/login');
     }
   }, [isAuthenticated]);

@@ -10,7 +10,7 @@ const LoginPage = () => {
   const info = getUserInfo();
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
+    if (info) {
       navigate('/');
     }
   }, [isAuthenticated]);

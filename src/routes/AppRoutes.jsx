@@ -9,6 +9,10 @@ import VerifyEmailPage from '../components/auth/VerifyEmail';
 import Home from '../components/Home';
 import Pricing from '../components/pricing/Pricing';
 import PaymentSuccessPage from '../payments/PaymentSuccessPage';
+import ProfileLayout from '../layout/ProfileLayout';
+import ChangePassword from '../components/auth/UpdatePassword';
+import TuteCard from '../components/TuteCard/TuteCard';
+import ProfileCard from '../components/TuteCard/ProfileCard';
 
 export const getRoutes = () => [
   <Route key="key__" path="/" element={<HomeLayout />}>
@@ -22,6 +26,10 @@ export const getRoutes = () => [
   </Route>,
   <Route key="key__dashboard" path="/dashboard" element={<HomeLayout />}>
     <Route index element={<Home />} />
+  </Route>,
+  <Route key="key__profile" path="/profile" element={<ProfileLayout />}>
+    <Route index element={<ProfileCard />} />
+    <Route path="update-password" element={<ChangePassword />} />
   </Route>,
   <Route key="key_success" path="success" element={<HomeLayout />}>
     <Route index element={<PaymentSuccessPage />} />

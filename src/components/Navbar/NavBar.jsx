@@ -1,25 +1,13 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import jwtDecode from 'jwt-decode';
+import getUserInfo from '../../utils/getUserInfo';
 import { NavLinks } from '../../utils/NavLinks';
 
 const NavBar = () => {
-  const [userInfo, setUserInfo] = useState(null);
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const info = getUserInfo();
 
-  useEffect(() => {
-    const token = localStorage.getItem('token');
-    try {
-      const decodedUserInfo = jwtDecode(token);
-      setUserInfo(decodedUserInfo);
-    } catch (error) {
-      setUserInfo(null);
-    }
-  }, []);
-
-  const info = userInfo;
   const handleSignout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('persist:root');
@@ -61,20 +49,41 @@ const NavBar = () => {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  {info && info.data && (
+                    <Link
+                      to="/dashboard"
+                      className="font-medium tracking-wide text-gray-100 transition-colors duration-200 hover:text-teal-accent-400"
+                    >
+                      Dashboard
+                    </Link>
+                  )}
+                </li>
               </ul>
             </div>
-            <ul className="flex items-center hidden space-x-8 lg:flex">
+            <ul className="flex items-center space-x-8 lg:flex">
               {info && info.data ? (
-                <li>
-                  <Link to="/">
-                    <button
-                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                      onClick={handleSignout}
-                    >
-                      Sign out
-                    </button>
-                  </Link>
-                </li>
+                <>
+                  <li>
+                    <Link to="/profile">
+                      <img
+                        className="w-10 h-10 rounded-full b"
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
+                        alt=""
+                      />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/">
+                      <button
+                        className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                        onClick={handleSignout}
+                      >
+                        Sign out
+                      </button>
+                    </Link>
+                  </li>
+                </>
               ) : (
                 <>
                   <li>

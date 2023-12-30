@@ -15,7 +15,7 @@ const responseHandler = (response) => response;
 
 const errorHandler = (error) => {
   if (error.response.status === 401) {
-    return (window.location.href = '/login');
+    return (window.location.href = '/auth/login');
   }
   return Promise.reject(error);
 };
