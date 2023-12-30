@@ -6,6 +6,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { showErrorMessage, showSuccessMessage } from '../../utils/toast';
 import { registerSchema } from '../../validations/inputValidation';
 import { signup } from '../../redux/reducers/signupSlice';
+import InputField from './InputField';
 import Button from '../Button';
 
 const Signup = () => {
@@ -20,7 +21,7 @@ const Signup = () => {
   const onSubmit = async (userData) => {
     try {
       const response = await dispatch(signup(userData)).unwrap();
-      showSuccessMessage('Successfully Registered');
+      showSuccessMessage('Successfully Registered, please verify your email');
       navigate('/auth/login');
     } catch (error) {
       showErrorMessage(error.data.message);
@@ -104,34 +105,17 @@ const Signup = () => {
                       {errors.email && <p>{errors.email.message}</p>}
                     </p>
                   </div>
-                  {/* End Form Group */}
-                  {/* Form Group */}
+
                   <div>
-                    <label
-                      htmlFor="password"
-                      className="block text-sm mb-2 dark:text-white"
-                    >
-                      Password
-                    </label>
-                    <div className="relative">
-                      <input
-                        id="password"
-                        type="password"
-                        placeholder="******************"
-                        required
-                        {...register('password')}
-                        className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
-                      />
-                    </div>
-                    <p
-                      className="hidden text-xs text-red-600 mt-2"
-                      id="password-error"
-                    >
-                      {errors.password && <p>{errors.password.message}</p>}
-                    </p>
+                    <InputField
+                      placeholder="***********"
+                      type="password"
+                      className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                      {...register('password')}
+                      error={errors?.password}
+                    />
                   </div>
 
-                  {/* End Form Group */}
                   {/* Checkbox */}
                   <div className="mb-6">
                     <label className="mb-2 flex text-sm">
