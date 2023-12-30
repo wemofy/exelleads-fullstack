@@ -8,8 +8,7 @@ import store, { persistor } from './redux/store';
 const MainWrapper = ({ children }) => (
   <Provider store={store}>
     <PersistGate loading={null} persistor={persistor}>
-    <FloatingWhatsApp phoneNumber ="+919373365368" accountName="Exelleads" chatMessage="Hey there 👋, Welcome to Excelleads🚀, \nHow can we help you?"/>
-
+    <FloatingWhatsApp phoneNumber ="+19093488855" accountName="Exelleads" chatMessage="Hey there 👋, Welcome to Excelleads🚀, \nHow can we help you?"/>
       {children}
     </PersistGate>
   </Provider>
