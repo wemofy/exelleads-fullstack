@@ -4,6 +4,8 @@ import { Table } from 'flowbite-react';
 import { FaInstagram,FaLinkedin } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { Button, Card, Checkbox, Label, TextInput } from 'flowbite-react';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -11,6 +13,24 @@ const AddPlan = () => {
     const[paymentData,setpaymentData] = useState();
     const [error, setError] = useState(null);
 
+    const handlePlanDelete = async (item) => {
+        const planid = item._id;
+      
+        try {
+          const response = await axios.delete(`/plans/delete/${planid}`);
+      
+          if (response.status === 200) {
+            toast(`Plan with ID ${planid} deleted successfully`)
+            console.log(`Plan with ID ${planid} deleted successfully`);
+            window.location.reload();
+          } else {
+            console.log(`Unexpected status code: ${response.status}`);
+          }
+        } catch (error) {
+          
+          console.error('Error deleting plan:', error);
+        }
+      };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -55,6 +75,7 @@ const AddPlan = () => {
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Lead query</Table.HeadCell>
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Search query</Table.HeadCell>
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Day Duration</Table.HeadCell>
+    <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Delete</Table.HeadCell>
    
     
   </Table.Head>
@@ -76,6 +97,9 @@ const AddPlan = () => {
      <Table.Cell>{item.searchQueriesPerDay || 0}</Table.Cell>
   <Table.Cell>{item._id
  || 0}</Table.Cell>
+
+<Table.Cell>  <Button onClick={()=>handlePlanDelete(item)}> Delete</Button>  </Table.Cell>
+ 
          
         </Table.Row>
       ))}
