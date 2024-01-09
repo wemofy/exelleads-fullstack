@@ -11,14 +11,14 @@ import Pricing from '../components/pricing/Pricing';
 import PaymentSuccessPage from '../payments/PaymentSuccessPage';
 import ProfileLayout from '../layout/ProfileLayout';
 import ChangePassword from '../components/auth/UpdatePassword';
-import TuteCard from '../components/TuteCard/TuteCard';
+
 import ProfileCard from '../components/TuteCard/ProfileCard';
 import AdminPage from '../pages/AdminPage';
 import AdminLayout from '../layout/AdminLayout';
 import UserTable from '../components/Admin/UserTable';
 import PaymentTable from '../components/Admin/PaymentTable';
 import AddPlan from '../components/Admin/AddPlan';
-import CreatePlan from '../components/Admin/createPlan';
+import CreatePlan from '../components/Admin/CreatePlan';
 
 export const getRoutes = () => [
   <Route key="key__" path="/" element={<HomeLayout />}>
