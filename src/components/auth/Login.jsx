@@ -25,7 +25,11 @@ const Login = () => {
         showErrorMessage(response?.message);
       }
       showSuccessMessage(response?.message);
-      navigate('/dashboard');
+      if (response?.isAdmin === true) {
+        navigate('/admin');
+      } else {
+        navigate('/dashboard');
+      }
     } catch (error) {
       if (error.status === 403) {
         showErrorMessage(error?.data?.message);

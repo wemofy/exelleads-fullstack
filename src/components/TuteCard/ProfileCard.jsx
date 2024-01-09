@@ -8,6 +8,7 @@ const ProfileCard = () => {
   const statistics = useSelector((state) => state.statistics);
   const dispatch = useDispatch();
   const info = getUserInfo();
+ 
 
   useEffect(() => {
     dispatch(fetchStatistics());

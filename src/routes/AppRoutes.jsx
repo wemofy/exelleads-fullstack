@@ -13,6 +13,12 @@ import ProfileLayout from '../layout/ProfileLayout';
 import ChangePassword from '../components/auth/UpdatePassword';
 import TuteCard from '../components/TuteCard/TuteCard';
 import ProfileCard from '../components/TuteCard/ProfileCard';
+import AdminPage from '../pages/AdminPage';
+import AdminLayout from '../layout/AdminLayout';
+import UserTable from '../components/Admin/UserTable';
+import PaymentTable from '../components/Admin/PaymentTable';
+import AddPlan from '../components/Admin/AddPlan';
+import CreatePlan from '../components/Admin/createPlan';
 
 export const getRoutes = () => [
   <Route key="key__" path="/" element={<HomeLayout />}>
@@ -34,6 +40,15 @@ export const getRoutes = () => [
   <Route key="key_success" path="success" element={<HomeLayout />}>
     <Route index element={<PaymentSuccessPage />} />
   </Route>,
+  <Route key="key_admin" path="/admin" element={<AdminLayout/>}>
+     <Route index element={<AdminPage />} />
+     <Route path="all-users" element={<UserTable />} />
+     <Route path="payments" element={<PaymentTable />} />
+     <Route path="seeplans" element={<AddPlan />} />
+     <Route path="addplans" element={< CreatePlan />} />
+
+  
+</Route>,
 ];
 
 const AppRoutes = () => (

@@ -37,10 +37,10 @@ const TableComp = ({ tableData }) => {
           <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
             {item.name}
           </Table.Cell>
-          <Table.Cell>{item.phone}</Table.Cell>
+          <Table.Cell>{item.phone_number}</Table.Cell>
           <Table.Cell>{item.individual_rating}</Table.Cell>
           <Table.Cell>{item.instagram || <FaInstagram className='text-2xl'/>}</Table.Cell>
-          <Table.Cell>{item.email || <MdEmail className='text-2xl' />}</Table.Cell>
+          <Table.Cell>{item.website || <MdEmail className='text-2xl' />}</Table.Cell>
           <Table.Cell>{item.linkden || <FaLinkedin className='text-2xl'/>}</Table.Cell>
           <Table.Cell>
             <a href={`tel:${item.phone}`}>

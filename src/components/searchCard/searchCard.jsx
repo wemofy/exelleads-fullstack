@@ -124,6 +124,18 @@ const searchCard = () => {
               {...register('city')}
             />
           </div>
+          <div>
+            <div className="mb-2 block">
+              <Label htmlFor="Entries" value="No. of leads" />
+            </div>
+            <TextInput
+              id="entriescount"
+              type="entriescount"
+              placeholder="10"
+              required  
+              {...register('entriescount')}
+            />
+          </div>
           {isLoading ? (
             <>
               <Button type="submit" label="" className="" disabled={true}>

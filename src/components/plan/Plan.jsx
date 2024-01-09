@@ -23,7 +23,7 @@ const Plan = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        method: 'GET',
+        method: 'GET',  
       })
       .then((response) => {
         setPlans(response.data);
@@ -62,7 +62,7 @@ const Plan = () => {
                   {formatTitle(plan.name)}
                 </p>
                 <p className="text-3xl font-bold text-gray-900 dark:text-white">
-                  ${plan.price}
+                  {plan.price} INR
                   <span className="text-sm text-gray-300">/ month</span>
                 </p>
                 <p className="mt-4 text-xs text-gray-600 dark:text-gray-100">
@@ -112,6 +112,7 @@ const Plan = () => {
                     {plan.leadsPerDay} leads from Queries per day
                   </li>
                 </ul>
+
 
                 <button
                   type="button"
