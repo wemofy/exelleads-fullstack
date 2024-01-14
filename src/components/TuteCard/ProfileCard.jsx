@@ -14,7 +14,11 @@ const ProfileCard = () => {
     dispatch(fetchStatistics());
   }, [dispatch]);
 
+
+  console.log(statistics);
   if (statistics.length < 0) return null;
+
+  
 
   return (
     <>
@@ -145,11 +149,12 @@ const ProfileCard = () => {
                     Plan:{' '}
                     <span className="ml-1">
                       {statistics.data
-                        ? formatTitle(statistics?.data.plan?.name)
+                        ? formatTitle(statistics.data?.plan?.name)
                         : 'No Plan'}
                     </span>
                   </p>
                   <p>
+                    {console.log(statistics.data)}
                     Remaining Days:
                     <span className="ml-2">
                       {statistics.data
