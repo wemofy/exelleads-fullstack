@@ -26,7 +26,7 @@ const TuteCard = () => {
                   <div className="flex items-center">
                     <div className="flex flex-col">
                       <div className="w-full flex-none text-2xl text-gray-800 font-bold leading-none">
-                        👋 <b className="text-2xl">Hello</b> {info.data.name}
+                        👋 <b className="text-2xl">Hello</b> {info?.data?.name}
                       </div>
                       <div className="flex-auto text-gray-500 my-1">
                         <span className="mr-3 ">LeadFinder</span>
@@ -143,7 +143,7 @@ const TuteCard = () => {
                     Plan:{' '}
                     <span className="ml-1">
                       {statistics.data
-                        ? formatTitle(statistics.data.plan.name)
+                        ? formatTitle(statistics?.data?.plan?.name)
                         : 'No Plan'}
                     </span>
                   </p>
