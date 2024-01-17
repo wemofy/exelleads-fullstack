@@ -10,12 +10,15 @@ import Button from '../Button';
 import TableComp from '../TableComp/TableComp';
 import { fetchStatistics } from '../../redux/reducers/statisticsSlice';
 import Modal from 'react-modal';
+import getUserInfo from '../../utils/getUserInfo';
 import ModalSubcribe from '../ModalSubcribe/ModalSubcribe';
+import ModalOnSearch from '../ModalOnSearch/ModalOnSearch';
 
 
 const searchCard = () => {
   const [errorModalIsOpen, setErrorModalIsOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [isSearchOpen,setIsSearchOpen] = useState(false);
 
   const openErrorModal = (message) => {
     setErrorMessage(message);
@@ -35,10 +38,26 @@ const searchCard = () => {
     handleSubmit,
     formState: { errors },
   } = useForm({ resolver: yupResolver(searchSchema) });
+
+  const statistics = useSelector((state) => state.statistics);
+  const info = getUserInfo();
+
+  const leadsRemaining= statistics.data?.leadsPerDay;
+ 
   const onSubmit = async (searchData) => {
     try {
+      console.log(searchData);
+      setIsSearchOpen(true);
+
+      setTimeout(()=>{
+        setIsSearchOpen(false);
+      },5000)
+
+    
+    
       const response = await dispatch(search(searchData)).unwrap();
       dispatch(fetchStatistics());
+      
       setSearchResults(response.data);
     } catch (error) {
       openErrorModal("An error occurred");
@@ -47,6 +66,29 @@ const searchCard = () => {
 
   return (
     <>
+       <Modal
+  isOpen={isSearchOpen}
+  onRequestClose={closeErrorModal}
+  contentLabel="Error Modal"
+  style={{
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    },
+    content: {
+      width: '60%', // Adjust the width as needed
+      height: 'fit-content', // Adjust the height as needed
+      margin: 'auto',
+    },
+  }}
+>
+  <div className='text-2xl flex text-center justify-center'>
+   We are founding for leads for you, Please Wait for 2-3 Minutes depending on your leads count,
+   Thanks for using Exelleads!!!🚀
+  </div>
+ 
+  
+ 
+</Modal>
    <Modal
   isOpen={errorModalIsOpen}
   onRequestClose={closeErrorModal}
@@ -65,6 +107,7 @@ const searchCard = () => {
   <div>
     <ModalSubcribe/>
   </div>
+ 
   
   <button onClick={closeErrorModal}
             

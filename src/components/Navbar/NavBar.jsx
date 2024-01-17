@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import getUserInfo from '../../utils/getUserInfo';
 import { NavLinks } from '../../utils/NavLinks';
+import logo from "../../assets/croplogo.png"
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,23 +20,13 @@ const NavBar = () => {
           <div className="relative flex items-center justify-between">
             <div className="flex items-center">
               <Link to="/" className="inline-flex items-center mr-8">
-                <svg
-                  className="w-8 text-teal-accent-400"
-                  viewBox="0 0 24 24"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  strokeLinecap="round"
-                  strokeMiterlimit={10}
-                  stroke="currentColor"
-                  fill="none"
-                >
-                  <rect x={3} y={1} width={7} height={12} />
-                  <rect x={3} y={17} width={7} height={6} />
-                  <rect x={14} y={1} width={7} height={6} />
-                  <rect x={14} y={11} width={7} height={12} />
-                </svg>
+              <img
+                        className="w-10 h-10"
+                        src={logo}
+                        alt=""
+                      />
                 <span className="ml-2 text-xl font-bold tracking-wide text-gray-100 uppercase">
-                  LeadFinder
+                  Exelleads
                 </span>
               </Link>
               <ul className=" items-center hidden  space-x-8 lg:flex">
@@ -146,7 +137,7 @@ const NavBar = () => {
                             <rect x="14" y="11" width="7" height="12"></rect>
                           </svg>
                           <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                            LeadFinder
+                            Exelleads
                           </span>
                         </Link>
                       </div>

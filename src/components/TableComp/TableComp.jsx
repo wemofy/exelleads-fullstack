@@ -31,25 +31,26 @@ const TableComp = ({ tableData }) => {
     {tableData &&
       tableData.map((item) => (
         <Table.Row
-          key={item.phone}
-          className="bg-red-500 dark:border-gray-700 dark:bg-gray-800 w-full sm:w-44"
-        >
-          <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-            {item.name}
-          </Table.Cell>
-          <Table.Cell>{item.phone_number}</Table.Cell>
-          <Table.Cell>{item.individual_rating}</Table.Cell>
-          <Table.Cell>{item.instagram || <FaInstagram className='text-2xl'/>}</Table.Cell>
-          <Table.Cell>{item.website || <MdEmail className='text-2xl' />}</Table.Cell>
-          <Table.Cell>{item.linkden || <FaLinkedin className='text-2xl'/>}</Table.Cell>
-          <Table.Cell>
-            <a href={`tel:${item.phone}`}>
-              <button className='inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'>
-                Call
-              </button>
-            </a>
-          </Table.Cell>
-        </Table.Row>
+        key={item.phone}
+        className="bg-red-500 dark:border-gray-700 dark:bg-gray-800 w-full sm:w-44"
+      >
+        <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+          {item.name}
+        </Table.Cell>
+        <Table.Cell className='widthclass'>{item.phone_number}</Table.Cell>
+        <Table.Cell>{item.individual_rating}</Table.Cell>
+        <Table.Cell>{item.instagram || <FaInstagram className='text-2xl'/>}</Table.Cell>
+        <Table.Cell>{item.website || <MdEmail className='text-2xl' />}</Table.Cell>
+        <Table.Cell>{item.linkden || <FaLinkedin className='text-2xl'/>}</Table.Cell>
+        <Table.Cell>
+          <a href={`tel:${item.phone}`}>
+            <button className='inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'>
+              Call
+            </button>
+          </a>
+        </Table.Cell>
+      </Table.Row>
+      
       ))}
   </Table.Body>
 </Table>
