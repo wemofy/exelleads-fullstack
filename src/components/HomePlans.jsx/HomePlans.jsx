@@ -34,13 +34,12 @@ const HomePlans = () => {
             height={24}
           />
         </svg>
-        <span className="relative">Transparent</span>
+        <span className="relative">Transparent Pricing </span>
       </span>
-      pricing. Pay as you grow.
+      for business,help you grow!
     </h2>
     <p className="text-base text-gray-700 md:text-lg">
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-      doloremque rem aperiam, eaque ipsa quae.
+     
     </p>
   </div>
   <div className="grid max-w-md gap-10 row-gap-5 lg:max-w-screen-lg sm:row-gap-10 lg:grid-cols-3 xl:max-w-screen-lg sm:mx-auto">
@@ -63,9 +62,7 @@ const HomePlans = () => {
         >
          Get Free
         </a>
-        <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
-          Sed ut unde omnis iste natus accusantium doloremque.
-        </p>
+        
       </div>
     </div>
     <div className="relative flex flex-col justify-between p-8 transition-shadow duration-300 bg-white border rounded shadow-sm sm:items-center hover:shadow border-deep-purple-accent-400">
@@ -93,9 +90,7 @@ const HomePlans = () => {
         >
           Buy Starter
         </a>
-        <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
-          Sed ut unde omnis iste natus accusantium doloremque.
-        </p>
+        
       </div>
     </div>
     <div className="flex flex-col justify-between p-8 transition-shadow duration-300 bg-white border rounded shadow-sm sm:items-center hover:shadow">
@@ -118,9 +113,7 @@ const HomePlans = () => {
         >
           Buy Econmoy
         </a>
-        <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
-          Sed ut unde omnis iste natus accusantium doloremque.
-        </p>
+       
       </div>
     </div>
   </div>

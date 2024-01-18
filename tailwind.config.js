@@ -64,8 +64,8 @@ export default {
           900: '#311b92',
           'accent-100': '#b388ff',
           'accent-200': '#7c4dff',
-          'accent-400': '#651fff',
-          'accent-700': '#6200ea',
+          'accent-400': '#E61663',
+          'accent-700': '#EE0E62',
         },
         teal: {
           50: '#e0f2f1',
@@ -80,8 +80,8 @@ export default {
           900: '#004d40',
           'accent-100': '#a7ffeb',
           'accent-200': '#64ffda',
-          'accent-400': '#1de9b6',
-          'accent-700': '#00bfa5',
+          'accent-400': '#54AFE4',
+          'accent-700': '#EE0E62',
         },
         indigo: {
           50: '#e8eaf6',
