@@ -19,11 +19,19 @@ import UserTable from '../components/Admin/UserTable';
 import PaymentTable from '../components/Admin/PaymentTable';
 import AddPlan from '../components/Admin/AddPlan';
 import CreatePlan from '../components/Admin/CreatePlan';
+import HowtoSearch from '../pages/HowtoSearch';
+import FeaturePage from '../pages/FeaturePage';
 
 export const getRoutes = () => [
   <Route key="key__" path="/" element={<HomeLayout />}>
     <Route index element={<HomePage />} />
     <Route path="pricing" element={<Pricing />} />
+    <Route path="howtosearch" element={<HowtoSearch />}/>
+    <Route path="features" element={<FeaturePage />}
+    
+    
+    
+    />
   </Route>,
   <Route key="key__auth" path="/auth" element={<AuthLayout />}>
     <Route path="login" index element={<LoginPage />} />

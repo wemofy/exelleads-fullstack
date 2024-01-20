@@ -34,9 +34,9 @@ const HomePlans = () => {
             height={24}
           />
         </svg>
-        <span className="relative">Transparent Pricing </span>
+        <span className="relative"></span>
       </span>
-      for business,help you grow!
+      Transparent Pricing  for business, help you grow!
     </h2>
     <p className="text-base text-gray-700 md:text-lg">
      
@@ -51,7 +51,7 @@ const HomePlans = () => {
         </div>
         <div className="mt-2 space-y-3">
           <div className="text-gray-700">Free Access to applications</div>
-          <div className="text-gray-700"> 3 Search Queries per day</div>
+          <div className="text-gray-700"> 1 Search Queries per day</div>
           <div className="text-gray-700">5 leads from Queries per day</div>
         </div>
       </div>

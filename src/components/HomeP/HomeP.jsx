@@ -2,6 +2,7 @@ import React from 'react';
 import HomePlans from '../HomePlans.jsx/HomePlans';
 import FaqSection from '../FaqSection/FaqSection';
 import { Link } from 'react-router-dom';
+import HowtoSearch from '../../pages/HowtoSearch';
 
 const HomeP = () => {
   return (
@@ -48,12 +49,7 @@ leads that drive growth and success.
               >
                 Get started
               </Link>
-              <Link
-                to="/"
-                className="inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-deep-purple-accent-700"
-              >
-                Learn more
-              </Link>
+             
             </div>
           </div>
         </div>
@@ -138,7 +134,6 @@ stream of quality leads is the lifeblood of any successful enterprise. Hence, ou
 and scalable lead generation strategies that propel your business forward.
         </p>
       </div>
-      <a href="/" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Learn more</a>
     </div>
     <div class="flex flex-col justify-between p-5 border rounded shadow-sm">
       <div>
@@ -154,7 +149,6 @@ with deep industry insights. Our team comprises experts well-versed in the nuanc
 state-of-the-art tools and methodologies to unearth potential leads across diverse industries.
         </p>
       </div>
-      <a href="/" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Learn more</a>
     </div>
     <div class="flex flex-col justify-between p-5 border rounded shadow-sm">
       <div>
@@ -170,7 +164,6 @@ expertise in finding leads online, we provide you with access to an extensive po
 on quantity but on the quality and relevance of the leads we deliver.
         </p>
       </div>
-      <a href="/" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Learn more</a>
     </div>
     <div class="flex flex-col justify-between p-5 border rounded shadow-sm">
       <div>
@@ -184,7 +177,6 @@ on quantity but on the quality and relevance of the leads we deliver.
         Are you ready to take your business to new heights? Partner with us and unlock a
 world of unlimited business leads. Let's embark on this journey together towards sustainable growth and prosperity        </p>
       </div>
-      <a href="/" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Learn more</a>
     </div>
   </div>
 </div>
@@ -195,6 +187,8 @@ world of unlimited business leads. Let's embark on this journey together towards
 
       <FaqSection />
 
+      <HowtoSearch/>
+
       {/* Footer */}
 
       <div className="bg-gray-900">
@@ -203,15 +197,17 @@ world of unlimited business leads. Let's embark on this journey together towards
             <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
               <div>
                 <p className="font-medium tracking-wide text-gray-300">
-                  Category
+                About us
+
                 </p>
+
                 <ul className="mt-2 space-y-2">
                   <li>
                     <a
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
-                      News
+                      Services
                     </a>
                   </li>
                   <li>
@@ -219,7 +215,7 @@ world of unlimited business leads. Let's embark on this journey together towards
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
-                      World
+                      pricing
                     </a>
                   </li>
                   <li>
@@ -227,7 +223,7 @@ world of unlimited business leads. Let's embark on this journey together towards
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
-                      Games
+                      contact us
                     </a>
                   </li>
                   <li>
@@ -235,145 +231,22 @@ world of unlimited business leads. Let's embark on this journey together towards
                       href="/"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
-                      References
+                      Features
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/"
+                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                    >
+                      How to Search
+
                     </a>
                   </li>
                 </ul>
               </div>
-              <div>
-                <p className="font-medium tracking-wide text-gray-300">
-                  Apples
-                </p>
-                <ul className="mt-2 space-y-2">
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Web
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      eCommerce
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Business
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Entertainment
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Portfolio
-                    </a>
-                  </li>
-                </ul>
+              
               </div>
-              <div>
-                <p className="font-medium tracking-wide text-gray-300">
-                  Cherry
-                </p>
-                <ul className="mt-2 space-y-2">
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Media
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Brochure
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Nonprofit
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Educational
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Projects
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p className="font-medium tracking-wide text-gray-300">
-                  Business
-                </p>
-                <ul className="mt-2 space-y-2">
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Infopreneur
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Personal
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Wiki
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      Forum
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
             <div className="md:max-w-md lg:col-span-2">
               <span className="text-base font-medium tracking-wide text-gray-300">
                 Subscribe for updates
@@ -399,7 +272,7 @@ world of unlimited business leads. Let's embark on this journey together towards
           </div>
           <div className="flex flex-col justify-between pt-5 pb-10 border-t border-gray-800 sm:flex-row">
             <p className="text-sm text-gray-500">
-              © Copyright 2023 Exelleads . All rights reserved.
+              © Copyright 2024 Exelleads . All rights reserved.
             </p>
             <div className="flex items-center mt-4 space-x-4 sm:mt-0">
               <a
