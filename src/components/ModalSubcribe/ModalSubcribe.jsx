@@ -179,27 +179,14 @@ const ModalSubcribe = () => {
               />
             </svg>
             <h3 className="mb-2 text-2xl font-bold text-gray-800 dark:text-gray-200">
-              Your Plan has been expired!
+              Your may have entered the entries which is not available in our database 
             </h3>
             <p className="text-gray-500">
-              Please Purchase the new Plan to continue
+              Please enter the entry with less lead count our change position or name
             </p>
           </div>
           <div className="flex items-center">
-            <button
-              type="button"
-              className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-es-xl border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-white/10 dark:hover:bg-white/20 dark:text-white dark:hover:text-white dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-              data-hs-overlay="#hs-cookies"
-            >
-              <Link to="/pricing"> Purchase Now</Link>
-            </button>
-            <button
-              type="button"
-              className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-ee-xl border border-transparent bg-blue-600 text-white hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
-              data-hs-overlay="#hs-cookies"
-            >
-              <Link href="/dashboard">Go Back</Link>
-            </button>
+           
           </div>
         </div>
       </>

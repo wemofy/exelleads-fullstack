@@ -25,6 +25,9 @@ const TableComp = ({ tableData }) => {
 <button onClick={() => csvDownload(dataToConvert)} className=' bg-deep-purple-accent-400 p-2 rounded-full mb-2'>
 Download Leads
 </button>
+<div className="overflow-x-auto">
+    
+    </div>
 
      <Table striped className="w-full overflow-x-auto">
   <Table.Head className="w-full">
@@ -32,7 +35,7 @@ Download Leads
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Contact Number</Table.HeadCell>
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Ratings</Table.HeadCell>
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Instagram</Table.HeadCell>
-    <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Email</Table.HeadCell>
+    <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Website</Table.HeadCell>
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">LinkedIn</Table.HeadCell>
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Call</Table.HeadCell>
     <Table.HeadCell>
@@ -50,7 +53,7 @@ Download Leads
           {item.Name}
         </Table.Cell>
         <Table.Cell className='widthclass'>{item.Phone}</Table.Cell>
-        <Table.Cell>{item.individual_rating}</Table.Cell>
+        <Table.Cell>{item.rating}</Table.Cell>
         <Table.Cell>{item.instagram || <FaInstagram className='text-2xl'/>}</Table.Cell>
         <Table.Cell>{item.Website || <MdEmail className='text-2xl' />}</Table.Cell>
         <Table.Cell>{item.linkden || <FaLinkedin className='text-2xl'/>}</Table.Cell>

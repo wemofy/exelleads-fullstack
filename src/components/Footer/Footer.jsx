@@ -24,7 +24,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="/"
+                      href="/pricing"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
                       pricing
@@ -40,7 +40,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="/"
+                      href="/features"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
                       Features
@@ -48,7 +48,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a
-                      href="/"
+                      href="/howtosearch"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
                       How to Search

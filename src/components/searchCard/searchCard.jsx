@@ -15,6 +15,7 @@ import ModalSubcribe from '../ModalSubcribe/ModalSubcribe';
 import ModalOnSearch from '../ModalOnSearch/ModalOnSearch';
 
 
+
 const searchCard = () => {
   const [errorModalIsOpen, setErrorModalIsOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -60,7 +61,12 @@ const searchCard = () => {
       
       setSearchResults(response.data);
     } catch (error) {
-      openErrorModal("An error occurred");
+      if (error.response && error.response.status === 403) {
+          alert('Plan exceeded, purchase a plan.');
+        } else {
+          openErrorModal('An error occurred while fetching data.');
+        }
+      
     }
   };
 
@@ -82,6 +88,7 @@ const searchCard = () => {
   }}
 >
   <div className='text-2xl flex text-center justify-center'>
+    
    We are founding for leads for you, Please Wait for 2-3 Minutes depending on your leads count,
    Thanks for using Exelleads!!!🚀
   </div>
