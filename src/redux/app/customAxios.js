@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const customAxios = axios.create({
   baseURL: `${import.meta.env.VITE_BASE_URL}`,
-  timeout: 5000000,
+  timeout: 999999,
   headers: {},
 });
 const requestHandler = (request) => {
