@@ -8,15 +8,20 @@ const Footer = () => {
           <div className="grid row-gap-10 mb-8 lg:grid-cols-6">
             <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
               <div>
+              <a
+                      href="/about"
+                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
+                    >
                 <p className="font-medium tracking-wide text-gray-300">
                 About us
 
                 </p>
+                </a>
 
                 <ul className="mt-2 space-y-2">
                   <li>
                     <a
-                      href="/"
+                      href="/services"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
                       Services
@@ -27,16 +32,11 @@ const Footer = () => {
                       href="/pricing"
                       className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
                     >
-                      pricing
+                      Pricing
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="/"
-                      className="text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-200"
-                    >
-                      contact us
-                    </a>
+                   
                   </li>
                   <li>
                     <a

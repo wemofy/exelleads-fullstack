@@ -1,6 +1,9 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 import NavBar from '../components/Navbar/NavBar';
+import { Footer } from 'flowbite-react';
+
+
 
 const HomeLayout = () => {
   return (
@@ -9,6 +12,8 @@ const HomeLayout = () => {
       <main>
         <Outlet />
       </main>
+      <Footer/>
+      
     </div>
   );
 };

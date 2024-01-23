@@ -3,6 +3,7 @@ import HomePlans from '../HomePlans.jsx/HomePlans';
 import FaqSection from '../FaqSection/FaqSection';
 import { Link } from 'react-router-dom';
 import HowtoSearch from '../../pages/HowtoSearch';
+import { Footer } from 'flowbite-react';
 
 const HomeP = () => {
   return (
@@ -189,7 +190,8 @@ world of unlimited business leads. Let's embark on this journey together towards
 
       <HowtoSearch/>
 
-      {/* Footer */}
+      
+    
 
     </>
   );
