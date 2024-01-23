@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import { MdEmail } from "react-icons/md";
 import { FaInstagram,FaLinkedin } from "react-icons/fa";
 import csvDownload from 'json-to-csv-export'
+import * as XLSX from 'xlsx';
+import { saveAs } from 'file-saver';
 
 
 
@@ -14,15 +16,24 @@ const TableComp = ({ tableData }) => {
     console.log("fdfsfs",tableData);
   }
 
-  const dataToConvert = {
-    data: tableData,
-    filename: 'leaddata',
-    
-  }
+  
+
+  const exportToExcel = () => {
+    const worksheet = XLSX.utils.json_to_sheet(tableData);
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
+
+    // Buffer to store the generated Excel file
+    const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
+    const blob = new Blob([excelBuffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8' });
+
+    saveAs(blob, "data.xlsx");
+};
+
 
   return (
     <div className="w-full">
-<button onClick={() => csvDownload(dataToConvert)} className=' bg-deep-purple-accent-400 p-2 rounded-full mb-2'>
+<button onClick={exportToExcel} className=' bg-deep-purple-accent-400 p-2 rounded-full mb-2'>
 Download Leads
 </button>
 <div className="overflow-x-auto">
