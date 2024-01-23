@@ -32,6 +32,7 @@ const searchCard = () => {
   };
 
   const [searchResults, setSearchResults] = useState();
+  console.log(searchResults);
   const { isLoading } = useSelector((state) => state.search);
   const dispatch = useDispatch();
   const {
@@ -54,7 +55,7 @@ const searchCard = () => {
         setIsSearchOpen(false);
       },5000)
 
-    
+      setSearchResults(null);
     
       const response = await dispatch(search(searchData)).unwrap();
       dispatch(fetchStatistics());
