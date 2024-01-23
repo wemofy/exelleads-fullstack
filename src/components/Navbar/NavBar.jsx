@@ -57,11 +57,11 @@ const NavBar = () => {
                 <>
                   <li className='hidden md:inline-block '>
                     <Link to="/profile">
-                      <img
-                        className="w-10 h-10 rounded-full b"
-                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D"
-                        alt=""
-                      />
+                      <div className='bg-deep-purple-accent-400 rounded-full w-10 h-10 flex justify-center align-middle overflow-hidden'>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" strokeWidth={1.5} stroke="" className="w-12 h-12">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+</svg>
+</div>
                     </Link>
                   </li>
                   <li className='hidden md:inline-block '>
@@ -77,7 +77,7 @@ const NavBar = () => {
                 </>
               ) : (
                 <>
-                  <li>
+                  <li  className='hidden md:inline-block '>
                     <Link
                       to={'/auth/login'}
                       className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
@@ -174,6 +174,24 @@ const NavBar = () => {
                         ))}
 
                         {info && info.data ? (
+                          <>
+                          <li>
+                          <Link
+                      to="/dashboard"
+                      className="font-medium tracking-wide text-black-100 transition-colors duration-200 hover:text-teal-accent-400"
+                    >
+                      Dashboard
+                    </Link>
+                    </li>
+                          <li className='hidden md:inline-block '>
+                          <Link to="/profile">
+                            <div className='bg-deep-purple-accent-400 rounded-full w-10 h-10 flex justify-center align-middle overflow-hidden'>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="white" viewBox="0 0 24 24" strokeWidth={1.5} stroke="" className="w-12 h-12">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+      </svg>
+      </div>
+                          </Link>
+                        </li>
                           <li>
                             <Link to="/auth/login">
                               <button
@@ -184,6 +202,7 @@ const NavBar = () => {
                               </button>
                             </Link>
                           </li>
+                          </>
                         ) : (
                           <>
                             <li>

@@ -129,15 +129,15 @@ const Signup = () => {
                         <p className="">
                           I accept the
                           <a
-                            href="#"
-                            className="cursor-pointer text-blue-500 underline"
+                            href="/terms"
+                            className="cursor-pointer text-red-500 m-1 "
                           >
-                            terms of use
+                            Terms of use
                           </a>
                           and
                           <a
-                            href="#"
-                            className="cursor-pointer text-blue-500 underline"
+                            href="/privacy"
+                            className="cursor-pointer text-red-500 m-1"
                           >
                             privacy policy
                           </a>

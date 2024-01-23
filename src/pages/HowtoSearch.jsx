@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../components/Footer/Footer'
+import ExcelViewer from '../components/ExcelViewer/ExcelViewer';
 
 
 const HowtoSearch = () => {
@@ -29,19 +30,22 @@ const HowtoSearch = () => {
 
         </p>
         <a
-          href="/"
+          href="/about"
           aria-label=""
           className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
         >
-         Get Started
+        Read more
         </a>
       </div>
       <div>
+       
       
     </div>
+
      
     </div>
   </div>
+  <ExcelViewer/>
 </div>
 <Footer/>
 

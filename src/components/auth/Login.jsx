@@ -130,19 +130,19 @@ const Login = () => {
                       <div className="text-gray-800">
                         <p className="">
                           I accept the
-                          <Link
-                            href="#"
-                            className="cursor-pointer text-blue-500 underline"
+                          <a
+                            href="/terms"
+                            className="cursor-pointer text-blue-500 m-1 "
                           >
-                            terms of use
-                          </Link>
+                            Terms of use
+                          </a>
                           and
-                          <Link
-                            href="#"
-                            className="cursor-pointer text-blue-500 underline"
+                          <a
+                            href="/privacy"
+                            className="cursor-pointer text-blue-500 m-1"
                           >
                             privacy policy
-                          </Link>
+                          </a>
                         </p>
                       </div>
                     </label>
