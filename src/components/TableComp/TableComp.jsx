@@ -2,7 +2,6 @@ import { Table } from 'flowbite-react';
 import { useEffect } from 'react';
 import { MdEmail } from "react-icons/md";
 import { FaInstagram,FaLinkedin } from "react-icons/fa";
-import csvDownload from 'json-to-csv-export'
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 

@@ -49,7 +49,7 @@ const Plan = () => {
       <h1 className="text-2xl font-bold mb-6 text-center mt-5">
         Subscribe to access the leads features
       </h1>
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-4 justify-center">
         {plans &&
           plans.data
             .filter((plan) => plan.price !== 0)

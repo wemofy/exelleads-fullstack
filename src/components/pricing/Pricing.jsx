@@ -4,12 +4,12 @@ import Footer from '../Footer/Footer';
 
 const Pricing = () => {
   return (
-    <section>
-      <div className="flex justify-center items-center h-[100vh]">
+   <>
+      <div className="flex justify-center">
         <Plan />
       </div>
       <Footer/>
-    </section>
+   </>
   );
 };
 
