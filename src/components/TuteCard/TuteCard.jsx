@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchStatistics } from '../../redux/reducers/statisticsSlice';
 import getUserInfo from '../../utils/getUserInfo';
 import { formatTitle, remainingDays } from '../../utils/format';
+import { Button } from 'flowbite-react';
+import { Link } from 'react-router-dom';
 
 const TuteCard = () => {
   const statistics = useSelector((state) => state.statistics);
@@ -160,6 +162,12 @@ const TuteCard = () => {
             </div>
           </div>
         </div>
+      </div>
+      
+      <div className='flex justify-end m-2'>
+      <a href="mailto:exelleads@gmail.com">
+  <Button className="bg-deep-purple-accent-700 hover:bg-none">Report a Bug</Button>
+</a>
       </div>
     </>
   );
