@@ -10,7 +10,7 @@ const AboutUs = () => {
           <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
             About us<br class="hidden md:block" />
             
-            <span class="inline-block text-deep-purple-accent-400">Exelleads</span>
+            <span class="inline-block text-deep-purple-accent-400 m-1">Exel leads</span>
           </h2>
           <p class="text-base text-gray-700 md:text-lg">
           Welcome to ExelLeads – Your Premier Subscription-Based Platform for Lead Generation!
