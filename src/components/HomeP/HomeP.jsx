@@ -4,6 +4,7 @@ import FaqSection from '../FaqSection/FaqSection';
 import { Link } from 'react-router-dom';
 import HowtoSearch from '../../pages/HowtoSearch';
 import { Footer } from 'flowbite-react';
+import VideoSection from '../VideoSection/VideoSection';
 
 const HomeP = () => {
   return (
@@ -183,6 +184,7 @@ world of unlimited business leads. Let's embark on this journey together towards
 </div>
 
 <hr/> 
+<VideoSection/>
 
       <HomePlans />
 
