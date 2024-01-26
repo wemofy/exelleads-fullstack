@@ -90,7 +90,7 @@ const searchCard = () => {
 >
   <div className='text-2xl flex text-center justify-center'>
     
-   We are founding for leads for you, Please Wait for 2-3 Minutes depending on your leads count,
+   We are finding for leads for you, Please Wait for 2-3 Minutes depending on your leads count,
    Thanks for using Exelleads!!!🚀
   </div>
  

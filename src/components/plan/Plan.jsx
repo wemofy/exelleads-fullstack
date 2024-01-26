@@ -52,12 +52,13 @@ const Plan = () => {
       <div className="flex flex-wrap gap-4 justify-center">
         {plans &&
           plans.data
-            .filter((plan) => plan.price !== 0)
-            .map((plan) => (
-              <div
-                key={plan._id}
-                className="w-64 p-4 bg-white shadow-lg rounded-2xl dark:bg-gray-800"
-              >
+          .filter((plan) => plan.price !== 0)
+          .sort((a, b) => a.price - b.price) // Sort plans based on increasing prices
+          .map((plan) => (
+            <div
+              key={plan._id}
+              className="w-64 p-4 bg-white shadow-lg rounded-2xl dark:bg-gray-800"
+            >
                 <p className="mb-4 text-xl font-medium text-gray-800 dark:text-gray-50">
                   {formatTitle(plan.name)}
                 </p>
@@ -66,7 +67,7 @@ const Plan = () => {
                   <span className="text-sm text-gray-300">/ month</span>
                 </p>
                 <p className="mt-4 text-xs text-gray-600 dark:text-gray-100">
-                  For personal use and gain experience on how leads work.
+                  {plan.description}
                 </p>
                 <ul className="w-full mt-6 mb-6 text-sm text-gray-600 dark:text-gray-100">
                   <li className="mb-3 flex items-center">

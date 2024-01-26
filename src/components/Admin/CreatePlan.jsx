@@ -22,6 +22,7 @@ const CreatePlan = () => {
         price: '',
         searchQueriesPerDay: '',
         leadsPerDay: '',
+        description:'',
       });
 
       const handleInputChange = (e) => {
@@ -45,6 +46,7 @@ const CreatePlan = () => {
             price: '',
             searchQueriesPerDay: '',
             leadsPerDay: '',
+            description: '',
           });
          
             
@@ -90,6 +92,13 @@ const CreatePlan = () => {
             <Label htmlFor="leadsPerDay" value="leadsPerDay" />
           </div>
           <TextInput id="leadsPerDay" type="number"   value={formData.leadsPerDay}
+                onChange={handleInputChange} required />
+        </div>
+        <div>
+          <div className="mb-2 block">
+            <Label htmlFor="description" value="description" />
+          </div>
+          <TextInput id="description" type="text"   value={formData.description}
                 onChange={handleInputChange} required />
         </div>
         

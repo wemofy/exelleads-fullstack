@@ -8,7 +8,7 @@ const Pricing = () => {
       <div className="flex justify-center">
         <Plan />
       </div>
-      <Footer/>
+      
    </>
   );
 };

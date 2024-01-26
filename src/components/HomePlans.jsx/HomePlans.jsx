@@ -50,6 +50,8 @@ const HomePlans = () => {
           <div className="mr-1 text-5xl font-bold">Free</div>
         </div>
         <div className="mt-2 space-y-3">
+       
+        <div className="text-gray-700"> Free for 7 days</div>
           <div className="text-gray-700">Free Access to applications</div>
           <div className="text-gray-700"> 1 Search Queries per day</div>
           <div className="text-gray-700">5 leads from Queries per day</div>
@@ -78,6 +80,8 @@ const HomePlans = () => {
           <div className="text-gray-700">/ mo</div>
         </div>
         <div className="mt-2 space-y-3">
+
+        <div className="text-gray-700">Per days for 30 days</div>
         <div className="text-gray-700">Free Access to applications</div>
           <div className="text-gray-700"> 10 Search Queries per day</div>
           <div className="text-gray-700">100 leads from Queries per day</div>
@@ -101,6 +105,7 @@ const HomePlans = () => {
           <div className="text-gray-700">/ mo</div>
         </div>
         <div className="mt-2 space-y-3">
+        <div className="text-gray-700">Per days for 30 days</div>
         <div className="text-gray-700">Free Access to applications</div>
           <div className="text-gray-700"> 25 Search Queries per day</div>
           <div className="text-gray-700">700 leads from Queries per day</div>
