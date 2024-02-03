@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchCardHome from '../searchCard/SearchCardHome'
+import SearchCardHome from '../SearchCardHome/SearchCardHome'
 
 
 const HomeSearch = () => {
