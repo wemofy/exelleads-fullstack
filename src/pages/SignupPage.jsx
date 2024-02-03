@@ -16,7 +16,7 @@ const SignupPage = () => {
   }, [isAuthenticated]);
   return (
     <div className="w-screen font-sans text-gray-900">
-      <div className=" mt-4"></div>
+      <div className=""></div>
       <Signup />
     </div>
   );

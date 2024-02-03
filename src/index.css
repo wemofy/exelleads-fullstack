@@ -34,3 +34,8 @@
       transform: rotate(360deg);
     }
   }
+
+
+  .blurred {
+    filter: blur(3px); /* Adjust the blur strength as needed */
+  }

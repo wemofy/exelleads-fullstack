@@ -12,6 +12,17 @@ export const search = createAsyncThunk(
     }
   }
 );
+export const freesearch = createAsyncThunk(
+  'freesearch',
+  async (searchData, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post('/search/freesearch', searchData);
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.response);
+    }
+  }
+);
 
 export const searchSlice = createSlice({
   name: 'search',

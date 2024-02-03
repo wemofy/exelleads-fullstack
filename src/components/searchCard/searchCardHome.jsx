@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { showErrorMessage, showSuccessMessage } from '../../utils/toast';
 import { searchSchema } from '../../validations/inputValidation';
-import { search } from '../../redux/reducers/searchSlice';
+import { freesearch } from '../../redux/reducers/searchSlice';
 import Button from '../Button';
 import TableComp from '../TableComp/TableComp';
 import { fetchStatistics } from '../../redux/reducers/statisticsSlice';
@@ -13,10 +13,11 @@ import Modal from 'react-modal';
 import getUserInfo from '../../utils/getUserInfo';
 import ModalSubcribe from '../ModalSubcribe/ModalSubcribe';
 import ModalOnSearch from '../ModalOnSearch/ModalOnSearch';
+import { Link } from 'react-router-dom';
 
 
 
-const searchCard = () => {
+const SearchCardHome = () => {
   const [errorModalIsOpen, setErrorModalIsOpen] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [isSearchOpen,setIsSearchOpen] = useState(false);
@@ -41,10 +42,7 @@ const searchCard = () => {
     formState: { errors },
   } = useForm({ resolver: yupResolver(searchSchema) });
 
-  const statistics = useSelector((state) => state.statistics);
-  const info = getUserInfo();
 
-  const leadsRemaining= statistics.data?.leadsPerDay;
  
   const onSubmit = async (searchData) => {
     try {
@@ -57,16 +55,20 @@ const searchCard = () => {
 
       setSearchResults(null);
     
-      const response = await dispatch(search(searchData)).unwrap();
-      dispatch(fetchStatistics());
+      const response = await dispatch(freesearch(searchData)).unwrap();
+     
       
       setSearchResults(response.data);
     } catch (error) {
-      if (error.response && error.response.status === 403) {
-          alert('Plan exceeded, purchase a plan.');
-        } else {
-          openErrorModal('An error occurred while fetching data.');
-        }
+      // if (error.response && error.response.status === 403) {
+      //     alert('Plan exceeded, purchase a plan.');
+      //   } else {
+
+        
+      //     openErrorModal('An error occurred while fetching data.');
+      //   }
+
+        console.log(error);
       
     }
   };
@@ -143,10 +145,9 @@ const searchCard = () => {
 </Modal>
 
       
-      <Card className="max-w-sm mt-2">
-        <text className="text-2xl">Search For Leads</text>
+      <Card className="w-full mt-2 flex justify-center">
         <form
-          className="flex flex-col gap-4"
+          className="flex flex-row gap-4"
           onSubmit={(event) => {
             handleSubmit(onSubmit)(event);
           }}
@@ -175,20 +176,10 @@ const searchCard = () => {
               {...register('city')}
             />
           </div>
-          <div>
-            <div className="mb-2 block">
-              <Label htmlFor="Entries" value="No. of leads" />
-            </div>
-            <TextInput
-              id="entriescount"
-              type="entriescount"
-              placeholder="10"
-              required  
-              {...register('entriescount')}
-            />
-          </div>
+          
           {isLoading ? (
             <>
+            <div className='mb-2 block'>
               <Button type="submit" label="" className="" disabled={true}>
                 Finding Please Wait...
                 <svg
@@ -208,25 +199,34 @@ const searchCard = () => {
                   />
                 </svg>
               </Button>
+              </div>
             </>
           ) : (
+            <div className='mt-6 lock'>
             <Button
               type="submit"
               label="search"
               className="cursor-pointer bg-deep-purple-accent-700 rounded py-2 px-8 text-center text-lg font-bold  text-white"
             />
+            </div>
           )}
 
           {/* <Button type="submit">Search</Button> */}
         </form>
       </Card>
-      <div className="max-w-3xl mt-10 mb-10">
+      <div className="">
         <div className="text-white ">
-          <TableComp tableData={searchResults} Dhidden={false}/>
+          <TableComp tableData={searchResults} Dhidden={true} Blurred={true}  />
+          <Link
+                to="/auth/signup"
+                className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+              >
+                Sign Up and Get amazing quality leads!!!!
+              </Link>
         </div>
       </div>
     </>
   );
 };
 
-export default searchCard;
+export default SearchCardHome;
