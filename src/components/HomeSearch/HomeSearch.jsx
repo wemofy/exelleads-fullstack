@@ -1,5 +1,5 @@
 import React from 'react'
-import SearchCardHome from '../../components/searchCard/SearchCardHome'
+import SearchCardHome from '../searchCard/SearchCardHome'
 
 
 const HomeSearch = () => {
