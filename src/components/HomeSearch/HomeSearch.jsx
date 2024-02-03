@@ -1,7 +1,6 @@
 import React from 'react'
 import SearchCardHome from '../../components/searchCard/SearchCardHome'
-import { Button } from 'flowbite-react'
-import { Link } from 'react-router-dom'
+
 
 const HomeSearch = () => {
   return (
