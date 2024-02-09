@@ -208,7 +208,12 @@ const Signup = () => {
                       {errors.email && <p>{errors.email.message}</p>}
                     </p>
                   </div>
-
+                  <label
+                      htmlFor="email"
+                      className="block text-sm mb-2 dark:text-white"
+                    >
+                      Password
+                    </label>
                   <div>
                     <InputField
                       placeholder="***********"
@@ -216,7 +221,17 @@ const Signup = () => {
                       className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                       {...register('password')}
                       error={errors?.password}
-                    />
+                      />
+
+<div className='flex flex-col text-red-500 text-[10px] mt-0'>
+  <span className='text-[1rem] text-black font-semibold '>Password Conditions</span>
+Password must be at least 8 characters <br/>
+   Password must contain at least one uppercase character<br/>
+    Password must contain at least one numeric characte <br/>
+    Password is required
+  </div>
+
+
                   </div>
 
                   {/* Checkbox */}
