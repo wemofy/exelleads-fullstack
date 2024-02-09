@@ -51,10 +51,11 @@ const HomePlans = () => {
         </div>
         <div className="mt-2 space-y-3">
        
-        <div className="text-gray-700"> Free for 7 days</div>
-          <div className="text-gray-700">Free Access to applications</div>
-          <div className="text-gray-700"> 1 Search Queries per day</div>
-          <div className="text-gray-700">5 leads from Queries per day</div>
+        <div className="text-gray-700"> Full Business Name</div>
+          <div className="text-gray-700">Website Link</div>
+          <div className="text-gray-700">Results in 2 minutes or less</div>
+          <div className="text-gray-700">Get rating scores for each lead</div>
+          <div className="text-gray-700">Find Worldwide Leads</div>
         </div>
       </div>
       <div>
@@ -81,10 +82,12 @@ const HomePlans = () => {
         </div>
         <div className="mt-2 space-y-3">
 
-        <div className="text-gray-700">Per days for 30 days</div>
-        <div className="text-gray-700">Free Access to applications</div>
-          <div className="text-gray-700"> 10 Search Queries per day</div>
-          <div className="text-gray-700">100 leads from Queries per day</div>
+        <div className="text-gray-700"> Full Business Name</div>
+          <div className="text-gray-700">Website Link</div>
+          <div className="text-gray-700">Results in 2 minutes or less</div>
+          <div className="text-gray-700">Get rating scores for each lead</div>
+          <div className="text-gray-700">Download search in xls</div>
+          <div className="text-gray-700">Find Worldwide Leads</div>
         </div>
       </div>
       <div>
@@ -105,10 +108,12 @@ const HomePlans = () => {
           <div className="text-gray-700">/ mo</div>
         </div>
         <div className="mt-2 space-y-3">
-        <div className="text-gray-700">Per days for 30 days</div>
-        <div className="text-gray-700">Free Access to applications</div>
-          <div className="text-gray-700"> 25 Search Queries per day</div>
-          <div className="text-gray-700">700 leads from Queries per day</div>
+        <div className="text-gray-700"> Full Business Name</div>
+          <div className="text-gray-700">Website Link</div>
+          <div className="text-gray-700">Results in 2 minutes or less</div>
+          <div className="text-gray-700">Get rating scores for each lead</div>
+          <div className="text-gray-700">Download search in xls</div>
+          <div className="text-gray-700">Find Worldwide Leads</div>
         </div>
       </div>
       <div>

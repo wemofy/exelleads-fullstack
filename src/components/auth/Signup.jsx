@@ -21,7 +21,7 @@ const Signup = () => {
   const onSubmit = async (userData) => {
     try {
       const response = await dispatch(signup(userData)).unwrap();
-      showSuccessMessage('Successfully Registered, please verify your email');
+      showSuccessMessage('Successfully Registered, please verify your email, Do check in your spams for verification email');
       navigate('/auth/login');
     } catch (error) {
       showErrorMessage(error.data.message);

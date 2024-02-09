@@ -1,7 +1,7 @@
 import { Table } from 'flowbite-react';
 import { useEffect } from 'react';
 import { MdEmail } from "react-icons/md";
-import { FaInstagram,FaLinkedin } from "react-icons/fa";
+import { FaInstagram,FaInternetExplorer,FaLinkedin, FaTwitter } from "react-icons/fa";
 import * as XLSX from 'xlsx';
 import { saveAs } from 'file-saver';
 
@@ -48,6 +48,8 @@ const TableComp = ({ tableData, Dhidden, Blurred }) => {
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12 ">Contact Number</Table.HeadCell>
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Ratings</Table.HeadCell>
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Instagram</Table.HeadCell>
+    <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Twitter</Table.HeadCell>
+    <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Email</Table.HeadCell>
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">Website</Table.HeadCell>
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12">LinkedIn</Table.HeadCell>
     <Table.HeadCell className={ Blurred ? ("hidden"):("w-1/6 sm:w-1/12 md:w-1/12")}>Call</Table.HeadCell>
@@ -68,7 +70,10 @@ const TableComp = ({ tableData, Dhidden, Blurred }) => {
         <Table.Cell className={Blurred ? ("widthclass blurred"):("widthclass")}>{item.Phone}</Table.Cell>
         <Table.Cell className={Blurred ? (" blurred"):("")}>{item.rating}</Table.Cell>
         <Table.Cell>{item.instagram || <FaInstagram className='text-2xl'/>}</Table.Cell>
-        <Table.Cell className={Blurred ? (" blurred"):("")}>{item.Website || <MdEmail className='text-2xl' />}</Table.Cell>
+        <Table.Cell>{item.instagram || <FaTwitter className='text-2xl'/>}</Table.Cell>
+        <Table.Cell>{item.instagram || <MdEmail className='text-2xl'/>}</Table.Cell>
+
+        <Table.Cell className={Blurred ? (" blurred"):("tablewidth")} >{item.Website || <FaInternetExplorer className='text-2xl' />}</Table.Cell>
         <Table.Cell className={Blurred ? (" blurred"):("")}>{item.linkden || <FaLinkedin className='text-2xl'/>}</Table.Cell>
         <Table.Cell>
           <a href={`tel:${item.Phone}`}>

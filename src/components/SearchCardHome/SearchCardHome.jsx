@@ -145,18 +145,19 @@ const SearchCardHome = () => {
 </Modal>
 
       
-      <Card className="w-full mt-2 flex justify-center">
+      <Card className="w-full mt-2">
         <form
-          className="flex flex-row gap-4"
+          className="flex flex-row w-full gap-4"
           onSubmit={(event) => {
             handleSubmit(onSubmit)(event);
           }}
         >
-          <div>
-            <div className="mb-2 block">
+          <div className='w-1/2'>
+            <div className="mb-2  block">
               <Label htmlFor="position" value="Enter Position" />
             </div>
             <TextInput
+            className='w-full'
               id="position"
               type="position"
               placeholder="Website Designer"
@@ -164,7 +165,7 @@ const SearchCardHome = () => {
               {...register('position')}
             />
           </div>
-          <div>
+          <div className='w-[30%]'>
             <div className="mb-2 block">
               <Label htmlFor="city" value="Enter the City" />
             </div>

@@ -13,6 +13,8 @@ import Modal from 'react-modal';
 import getUserInfo from '../../utils/getUserInfo';
 import ModalSubcribe from '../ModalSubcribe/ModalSubcribe';
 import ModalOnSearch from '../ModalOnSearch/ModalOnSearch';
+import { toast } from 'react-toastify';
+
 
 
 
@@ -48,6 +50,12 @@ const searchCard = () => {
  
   const onSubmit = async (searchData) => {
     try {
+
+      if(searchData.entriescount > leadsRemaining){
+        searchData.entriescount = leadsRemaining;
+        showSuccessMessage(`You have only ${leadsRemaining} Remaining, Showing ${leadsRemaining} Results for Search`);
+      }
+
       console.log(searchData);
       setIsSearchOpen(true);
 
