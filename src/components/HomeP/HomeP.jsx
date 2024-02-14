@@ -6,59 +6,83 @@ import HowtoSearch from '../../pages/HowtoSearch';
 import { Footer } from 'flowbite-react';
 import VideoSection from '../VideoSection/VideoSection';
 import HomeSearch from '../HomeSearch/HomeSearch';
+import Plan from '../plan/Plan';
 
 const HomeP = () => {
   return (
     <>
 
 <HomeSearch/>
-      <div className="relative flex flex-col-reverse pt-16 lg:pt-0 lg:flex-col lg:pb-0">
-        <div className="inset-y-0 top-0 right-0 z-0 w-full max-w-xl px-4 mx-auto md:px-0 lg:pr-0 lg:mb-0 lg:mx-0 lg:w-7/12 lg:max-w-full lg:absolute xl:px-0">
-          <svg
-            className="absolute left-0 hidden h-full text-white transform -translate-x-1/2 lg:block"
-            viewBox="0 0 100 100"
-            fill="currentColor"
-            preserveAspectRatio="none slice"
-          >
-            <path d="M50 0H100L50 100H0L50 0Z" />
-          </svg>
-          <img
-            className="object-cover w-full h-56 rounded shadow-lg lg:rounded-none lg:shadow-none md:h-96 lg:h-full"
-            src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-            alt=""
-          />
-        </div>
-        <div className="relative flex flex-col items-start w-full max-w-xl px-4 mx-auto md:px-0 lg:px-8 lg:max-w-screen-xl">
-          <div className="mb-16 lg:my-40 lg:max-w-lg lg:pr-5">
-            <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
-              Exelleads
-            </p>
-            <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-            Empowering Businesses 
 
-              <br className="hidden md:block" />
-              
-              <span className="inline-block text-deep-purple-accent-400">
-              with Unlimited Leads!!
-              </span>
-            </h2>
-            <p className="pr-5 mb-5 text-base text-gray-700 md:text-lg">
-            At Exel Leads, we are passionate about empowering businesses to thrive by providing unparalleled lead generation
+            <div className="px-4 py-12 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+  <div className="flex flex-col justify-between lg:flex-row">
+    <div className="mb-12 lg:max-w-lg lg:pr-5 lg:mb-0">
+      <div className="max-w-xl mb-6">
+        <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
+        Empowering Businesses 
+
+          <br className="hidden md:block" />
+          <span className="inline-block text-deep-purple-accent-400">
+          with Unlimited Leads!!
+          </span>
+        </h2>
+        <p className="text-base text-gray-700 md:text-lg">
+        At Exel Leads, we are passionate about empowering businesses to thrive by providing unparalleled lead generation
 solutions. With a steadfast commitment to excellence and innovation, we specialize in finding unlimited business
 leads that drive growth and success.
-            </p>
-            <div className="flex items-center">
-              <Link
-                to="/auth/signup"
-                className="inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-              >
-                Get started
-              </Link>
-             
-            </div>
+        </p>
+      </div>
+      <hr className="mb-6 border-gray-300" />
+      <div className="flex">
+        <a href="/" aria-label="Play Song" className="mr-3">
+          <div className="flex items-center justify-center w-10 h-10 text-white transition duration-300 transform rounded-full shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 hover:scale-110">
+            <svg className="w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M16.53,11.152l-8-5C8.221,5.958,7.833,5.949,7.515,6.125C7.197,6.302,7,6.636,7,7v10 c0,0.364,0.197,0.698,0.515,0.875C7.667,17.958,7.833,18,8,18c0.184,0,0.368-0.051,0.53-0.152l8-5C16.822,12.665,17,12.345,17,12 S16.822,11.335,16.53,11.152z" />
+            </svg>
           </div>
+        </a>
+        <div className="flex flex-col">
+          <div className="text-sm font-semibold">
+            Get Quality leads 
+          </div>
+          <div className="text-xs text-gray-700">Exelleads</div>
         </div>
       </div>
+    </div>
+    <div className="px-5 pt-6 pb-5 text-center border border-gray-300 rounded lg:w-2/5">
+      <div className="mb-5 font-semibold">Create an account</div>
+      <div className="flex justify-center w-full mb-3">
+        <a
+          href="/auth/signup"
+          className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+        >
+          <div className="flex items-center">
+            <div className="mr-3 font-semibold text-white">
+              Sign Up Now
+            </div>
+           
+          </div>
+        </a>
+      </div>
+      <p className="max-w-md px-5 mb-1 text-xs text-gray-600 sm:text-sm md:mb-5">
+      Empowering Businsess with Quality Leads!!! 
+      </p>
+      <div className="flex items-center w-full mb-5">
+        <hr className="flex-1 border-gray-300" />
+        <div className="px-3 text-xs text-gray-500 sm:text-sm">or</div>
+        <hr className="flex-1 border-gray-300" />
+      </div>
+      <a
+        href="/pricing"
+        className="inline-flex items-center justify-center w-full h-12 px-6 font-semibold transition duration-200 bg-white border border-gray-300 rounded md:w-auto hover:bg-gray-100 focus:shadow-outline focus:outline-none"
+      >
+        See Our Pricing
+      </a>
+    </div>
+  </div>
+</div>
+
+    
       <hr />
 
       <hr />
@@ -190,7 +214,7 @@ world of unlimited business leads. Let's embark on this journey together towards
 <VideoSection/>
 
 
-      <HomePlans />
+<Plan />
 
       <FaqSection />
 

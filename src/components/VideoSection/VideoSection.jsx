@@ -23,9 +23,9 @@ const VideoSection = () => {
     </h2>
     
   </div>
-  <div class="mx-auto lg:max-w-2xl">
+  <div class="mx-auto  flex justify-center lg:max-w-2xl">
     <div class="relative transition-shadow duration-300 hover:shadow-xl">
-    <iframe width="740" height="400" src="https://www.youtube.com/embed/3kmVahyGres?si=1ohg55E2ChAs_b__&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="1200" height="700" src="https://www.youtube.com/embed/3kmVahyGres?si=1ohg55E2ChAs_b__&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
        
     </div>
   </div>
