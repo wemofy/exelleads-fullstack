@@ -36,7 +36,7 @@ const CreatePlan = () => {
     
       const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(formData)
+        console.log(formData);
         try {
           const response = await axios.post('/plans', formData);
           console.log('Plan created successfully:', response.data);

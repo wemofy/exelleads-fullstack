@@ -41,8 +41,12 @@ const TableComp = ({ tableData, Dhidden, Blurred }) => {
 <div className="overflow-x-auto">
     
     </div>
+    <div 
+  className="disable-selection m-w-[30rem] overflow-scroll" 
+  style={{ userSelect: 'none', MozUserSelect: 'none', WebkitUserSelect: 'none', msUserSelect: 'none' }}
+>
 
-     <Table striped className="w-full overflow-x-auto">
+     <Table striped className="w-full overflow-x-auto ">
   <Table.Head className="w-full">
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/6">Name</Table.HeadCell>
     <Table.HeadCell className="w-1/6 sm:w-1/12 md:w-1/12 ">Contact Number</Table.HeadCell>
@@ -57,6 +61,7 @@ const TableComp = ({ tableData, Dhidden, Blurred }) => {
       <span className="sr-only">Call </span>
     </Table.HeadCell>
   </Table.Head>
+ 
   <Table.Body className="divide-y">
     {tableData &&
       tableData.map((item) => (
@@ -86,7 +91,10 @@ const TableComp = ({ tableData, Dhidden, Blurred }) => {
       
       ))}
   </Table.Body>
+
+
 </Table>
+</div>
 
     </div>
   );

@@ -1,5 +1,4 @@
 import React from 'react';
-import HomePlans from '../HomePlans.jsx/HomePlans';
 import FaqSection from '../FaqSection/FaqSection';
 import { Link } from 'react-router-dom';
 import HowtoSearch from '../../pages/HowtoSearch';

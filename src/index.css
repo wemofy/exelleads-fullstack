@@ -44,3 +44,11 @@
     color: #6366f1;
     width: 40%;
   }
+
+  .disable-selection {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }
+  
