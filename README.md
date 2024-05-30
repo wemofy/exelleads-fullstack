@@ -85,6 +85,14 @@ Contributions are welcome. Fork the repository, make your changes, and submit a 
 
 This project is licensed under the [MIT License](LICENSE).
 
+
+## 10.  How to setup project on local machine
+ 
+ Run the following commands
+ - npm install
+ - npm run dev
+ - Server will be started on localhost:5173
+
 ---
 
 ```
