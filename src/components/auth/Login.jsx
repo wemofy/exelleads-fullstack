@@ -7,11 +7,13 @@ import { loginSchema } from '../../validations/inputValidation';
 import { login } from '../../redux/reducers/loginSlice';
 import Button from '../Button';
 import { Link, useNavigate } from 'react-router-dom';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
   const navigate = useNavigate();
   const { isLoading } = useSelector((state) => state.login);
   const dispatch = useDispatch();
+  const [showPassword, setShowPassword] = useState(false);
   const {
     register,
     handleSubmit,
@@ -35,6 +37,10 @@ const Login = () => {
         showErrorMessage(error?.data?.message);
       }
     }
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
   return (
@@ -102,12 +108,19 @@ const Login = () => {
                     <div className="relative">
                       <input
                         id="password"
-                        type="password"
+                        type={showPassword ? 'text' : 'password'}
                         placeholder="******************"
                         required
                         {...register('password')}
                         className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                       />
+                      <button
+                        type="button"
+                        className="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5"
+                        onClick={togglePasswordVisibility}
+                      >
+                        {showPassword ? <FaEyeSlash /> : <FaEye />}
+                      </button>
                     </div>
                     <p
                       className="hidden text-xs text-red-600 mt-2"
