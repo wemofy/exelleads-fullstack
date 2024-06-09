@@ -1,17 +1,22 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ForgetPassword = () => {
-  const [email, setEmail] = useState('');
+const ResetPassword = () => {
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Simulate API call
+    if (password !== confirmPassword) {
+      setMessage('Passwords do not match');
+      return;
+    }
     setTimeout(() => {
-      setMessage('Redirecting to reset password page...');
-      navigate('/auth/reset-password');
+      setMessage('Password has been successfully reset');
+      setTimeout(() => navigate('/auth/login'), 3000); // Redirect to login page after 3 seconds
     }, 1000);
   };
 
@@ -21,28 +26,48 @@ const ForgetPassword = () => {
         <div className="p-4 sm:p-7">
           <div className="text-center">
             <h1 className="block text-2xl font-bold text-gray-800 dark:text-white">
-              Forget Password
+              Reset Password
             </h1>
           </div>
           <div className="mt-5">
             {/* Form */}
             <form onSubmit={handleSubmit}>
               <div className="grid gap-y-4">
-                {/* Email Field */}
+                {/* Password Field */}
                 <div>
                   <label
-                    htmlFor="email"
+                    htmlFor="password"
                     className="block text-sm mb-2 dark:text-white"
                   >
-                    Email address
+                    New Password
                   </label>
                   <div className="relative">
                     <input
-                      id="email"
-                      type="email"
-                      placeholder="Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
+                      id="password"
+                      type="password"
+                      placeholder="New Password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                      className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                    />
+                  </div>
+                </div>
+                {/* Confirm Password Field */}
+                <div>
+                  <label
+                    htmlFor="confirmPassword"
+                    className="block text-sm mb-2 dark:text-white"
+                  >
+                    Confirm Password
+                  </label>
+                  <div className="relative">
+                    <input
+                      id="confirmPassword"
+                      type="password"
+                      placeholder="Confirm Password"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
                       required
                       className="py-3 px-4 block w-full border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:ring-blue-500 dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
                     />
@@ -53,7 +78,7 @@ const ForgetPassword = () => {
                     type="submit"
                     className="w-full py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-deep-purple-accent-700 text-white hover:bg-deep-purple-accent-500 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600"
                   >
-                    Reset Password
+                    Change Password
                   </button>
                 </div>
                 {message && <p className="mt-4 text-green-500 text-center">{message}</p>}
@@ -67,4 +92,4 @@ const ForgetPassword = () => {
   );
 };
 
-export default ForgetPassword;
+export default ResetPassword;
