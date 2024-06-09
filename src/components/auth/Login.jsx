@@ -148,8 +148,16 @@ const Login = () => {
                     </label>
                   </div>
                   {/* End Checkbox */}
+                  <div className="text-center">
+                  <Link
+                    className="text-deep-purple-accent-700 decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 block"
+                    to="/auth/forget-password"
+                  >
+                    Forget Password?
+                  </Link>
+                  </div>
+
                   <div className="flex items-center">
-                    <div className="flex-1"></div>
                     {isLoading ? (
                       <>
                         <button

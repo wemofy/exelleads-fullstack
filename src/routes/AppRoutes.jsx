@@ -11,6 +11,8 @@ import Pricing from '../components/pricing/Pricing';
 import PaymentSuccessPage from '../payments/PaymentSuccessPage';
 import ProfileLayout from '../layout/ProfileLayout';
 import ChangePassword from '../components/auth/UpdatePassword';
+import ForgetPassword from '../components/auth/ForgetPassword';
+
 
 import ProfileCard from '../components/TuteCard/ProfileCard';
 import AdminPage from '../pages/AdminPage';
@@ -42,6 +44,7 @@ export const getRoutes = () => [
     <Route path="login" index element={<LoginPage />} />
     <Route path="signup" element={<SignupPage />} />
     <Route path="verify-email" element={<VerifyEmailPage />} />
+    <Route path="forget-password" element={<ForgetPassword />} />
   </Route>,
   <Route key="key__dashboard" path="/dashboard" element={<HomeLayout />}>
     <Route index element={<Home />} />
