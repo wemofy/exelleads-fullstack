@@ -13,7 +13,7 @@ import ProfileLayout from '../layout/ProfileLayout';
 import ChangePassword from '../components/auth/UpdatePassword';
 import ForgetPassword from '../components/auth/ForgetPassword';
 import ResetPassword from '../components/auth/ResetPassword';
-
+import Bug from '../components/ReportBug/Bug'
 
 import ProfileCard from '../components/TuteCard/ProfileCard';
 import AdminPage from '../pages/AdminPage';
@@ -33,20 +33,20 @@ export const getRoutes = () => [
   <Route key="key__" path="/" element={<HomeLayout />}>
     <Route index element={<HomePage />} />
     <Route path="pricing" element={<Pricing />} />
-    <Route path="howtosearch" element={<HowtoSearch />}/>
-    <Route path="features" element={<FeaturePage />}/>
-    <Route path="terms" element={< TermsPage/>}/>
-    <Route path="privacy" element={< PrivacyPolicy/>}/>
-    <Route path="services" element={< ServicesPage/>}/>
-    <Route path="about" element={< AboutUs/>}/>
-  
+    <Route path="howtosearch" element={<HowtoSearch />} />
+    <Route path="features" element={<FeaturePage />} />
+    <Route path="terms" element={<TermsPage />} />
+    <Route path="privacy" element={<PrivacyPolicy />} />
+    <Route path="services" element={<ServicesPage />} />
+    <Route path="about" element={<AboutUs />} />
+    <Route path="report-bug" element={<Bug />} /> {/* New route */}
   </Route>,
   <Route key="key__auth" path="/auth" element={<AuthLayout />}>
     <Route path="login" index element={<LoginPage />} />
     <Route path="signup" element={<SignupPage />} />
     <Route path="verify-email" element={<VerifyEmailPage />} />
     <Route path="forget-password" element={<ForgetPassword />} />
-    <Route path="reset-password" element={<ResetPassword />}/>
+    <Route path="reset-password" element={<ResetPassword />} />
   </Route>,
   <Route key="key__dashboard" path="/dashboard" element={<HomeLayout />}>
     <Route index element={<Home />} />
@@ -58,16 +58,15 @@ export const getRoutes = () => [
   <Route key="key_success" path="success" element={<HomeLayout />}>
     <Route index element={<PaymentSuccessPage />} />
   </Route>,
-  <Route key="key_admin" path="/admin" element={<AdminLayout/>}>
-     <Route index element={<AdminPage />} />
-     <Route path="all-users" element={<UserTable />} />
-     <Route path="payments" element={<PaymentTable />} />
-     <Route path="seeplans" element={<AddPlan />} />
-     <Route path="addplans" element={< CreatePlan />} />
-
-  
-</Route>,
+  <Route key="key_admin" path="/admin" element={<AdminLayout />}>
+    <Route index element={<AdminPage />} />
+    <Route path="all-users" element={<UserTable />} />
+    <Route path="payments" element={<PaymentTable />} />
+    <Route path="seeplans" element={<AddPlan />} />
+    <Route path="addplans" element={<CreatePlan />} />
+  </Route>,
 ];
+
 
 const AppRoutes = () => (
   <BrowserRouter basename="/">
