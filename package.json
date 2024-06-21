@@ -17,6 +17,7 @@
     "caniuse-lite": "^1.0.30001629",
     "dayjs": "^1.11.10",
     "file-saver": "^2.0.5",
+    "firebase": "^10.12.2",
     "flowbite-react": "^0.7.2",
     "json-to-csv-export": "^2.1.1",
     "jwt-decode": "^3.1.2",
