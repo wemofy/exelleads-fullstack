@@ -9,7 +9,9 @@ import { saveAs } from 'file-saver';
 
 const TableComp = ({ tableData, Dhidden, Blurred }) => {
   if (!tableData) {
-    return <div>Loading...</div>;
+    return <div>
+      
+    </div>;
   }
   if (tableData.length > 0) {
     console.log("fdfsfs",tableData);

@@ -96,10 +96,10 @@ const FaqSection = ({ faq, index, toggleFAQ }) => {
             pagination={{ clickable: true }}
             navigation={true}
           >
-            <SwiperSlide><img src={img1} alt="Slide 1" className="w-full h-auto" /></SwiperSlide>
-            <SwiperSlide><img src={img2} alt="Slide 2" className="w-full h-auto" /></SwiperSlide>
-            <SwiperSlide><img src={img3} alt="Slide 3" className="w-full h-auto" /></SwiperSlide>
-            <SwiperSlide><img src={img4} alt="Slide 4" className="w-full h-auto" /></SwiperSlide>
+            <SwiperSlide><img src={img1} alt="Slide 1" className="w-full h-auto max-h-96 "/></SwiperSlide>
+            <SwiperSlide><img src={img2} alt="Slide 2" className="w-full h-auto max-h-96 " /></SwiperSlide>
+            <SwiperSlide><img src={img3} alt="Slide 3" className="w-full h-auto max-h-96 " /></SwiperSlide>
+            <SwiperSlide><img src={img4} alt="Slide 4" className="w-full h-auto max-h-96 " /></SwiperSlide>
           </Swiper>
         </div>
 

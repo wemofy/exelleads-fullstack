@@ -1,5 +1,10 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
+import { logEvent } from 'firebase/analytics';
+import { getAnalytics } from 'firebase/analytics';
+
+// Import your components
 import HomeLayout from '../layout/Layout';
 import HomePage from '../pages/HomePage';
 import AuthLayout from '../layout/AuthLayout';
@@ -13,7 +18,7 @@ import ProfileLayout from '../layout/ProfileLayout';
 import ChangePassword from '../components/auth/UpdatePassword';
 import ForgetPassword from '../components/auth/ForgetPassword';
 import ResetPassword from '../components/auth/ResetPassword';
-import Bug from '../components/ReportBug/Bug'
+import Bug from '../components/ReportBug/Bug';
 
 import ProfileCard from '../components/TuteCard/ProfileCard';
 import AdminPage from '../pages/AdminPage';
@@ -67,12 +72,24 @@ export const getRoutes = () => [
   </Route>,
 ];
 
+const AppRoutes = () => {
+  const location = useLocation();
+  const analytics = getAnalytics();
 
-const AppRoutes = () => (
-  <BrowserRouter basename="/">
-    <ToastContainer />
-    <Routes>{getRoutes()}</Routes>
-  </BrowserRouter>
-);
+  useEffect(() => {
+    logEvent(analytics, 'page_view', {
+      page_path: location.pathname,
+      page_title: document.title,
+      page_location: window.location.href,
+    });
+  }, [location, analytics]);
+
+  return (
+    <div>
+      <ToastContainer />
+      <Routes>{getRoutes()}</Routes>
+    </div>
+  );
+};
 
 export default AppRoutes;
